@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Merienda&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+
+@media (max-width: 1000px) {
+
+    #content,
+    aside {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+body {
+    font-family: 'Marienda', cursive;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2 {
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+}
+
+header {
+    display: inline;
+}
+
+main {
+    padding: 20px;
+    overflow: auto;
+}
+
+/* navigation */
+.nav {
+    background-color: #1ac4c2;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+}
+
+.nav .logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.6em;
+    color: #444444;
+    margin: auto;
+    font-weight: bolder;
+}
+
+.nav ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 3px;
+}
+
+.nav a {
+    display: block;
+    color: #444444;
+    font-family: 'Caveat', cursive;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    font-size: 25px;
+}
+
+nav a:hover {
+    font-weight: bolder;
+    font-style: oblique;
+    cursor: pointer;
+}
+
+nav li {
+    display: inline;
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+/* Hamburger Navigation */
+.nav-toggle {
+    margin: 25px;
+    padding: auto;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    position: relative;
+    z-index: 999;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: #333;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+.nav-toggle input {
+    display: block;
+    position: absolute;
+    background-color: black;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+
+/* Hamburger Nav Animation */
+.nav-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.nav-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.nav-toggle input:checked~span:nth-child(2) {
+    background-color: white;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.nav-toggle input:checked~span:nth-child(4) {
+    background-color: white;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.nav-toggle input:checked~span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.landing h1,
+h2 {
+    font-size: 45px;
+    font-weight: bolder;
+}
+
+.landing h3 {
+    font-size: 30px;
+    font-family: 'Dancing Script', cursive;
+    letter-spacing: 4px;
+    font-weight: 800;
+    padding: 0px 20px;
+    text-transform: capitalize;
+    color: #ed9d3b;
+
+}
+
+.landing .icon {
+    font-size: 3em;
+}
+
+.jumbotron {
+    padding: 100px;
+    background-color: #1ac4c2;
+    text-align: center;
+    color: black;
+}
+
+.profile header {
+    text-align: center;
+}
+
+.profile p {
+    display: inline-block;
+    width: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+.profile img {
+    width: 200px;
+    border-radius: 50%;
+    box-shadow: 3px 5px 4px rgb(72, 70, 70);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/*  Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 5px;
+}
+
+.gallery h2 {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact {
+    padding: 15px;
+    text-align: center;
+}
+
+.contact .icon {
+    font-size: 3em;
+}
+
+.contact h3 {
+    font-size: 1.5rem;
+}
+
+.contact p {
+    font-weight: 200;
+    letter-spacing: 1px;
+    font-size: 0.8em;
+}
+
+footer {
+    padding: 10px;
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    color: #444444;
+    background-color: #1ac4c2;
+    text-align: center;
+    font-weight: bolder;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .nav {
+        order: inherit;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        justify-items: end;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav ul {
+        display: flex;
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: 0;
+        background-color: #79f7f3;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 1;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 1s;
+    }
+
+    .nav ul.slide {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        margin: 15px;
+    }
+}
